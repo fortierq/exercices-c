@@ -15,7 +15,7 @@ export class CRunner {
     if (typeof Worker === 'undefined' || typeof WebAssembly === 'undefined' || typeof DecompressionStream === 'undefined') {
       return Promise.resolve({results:[],diagnostics:'',error:'Ce navigateur ne prend pas en charge le moteur C. Utilisez une version récente de Firefox, Chrome, Edge ou Safari.'});
     }
-    this.worker ??= new Worker('/compiler/worker.js');
+    this.worker ??= new Worker(new URL('compiler/worker.js', document.baseURI));
     const worker = this.worker;
     return new Promise(resolve => {
       const results: TestResult[] = []; let diagnostics=''; let settled=false; let timer: ReturnType<typeof setTimeout>;

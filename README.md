@@ -36,3 +36,7 @@ Dépôt GitHub prévu : `fortierq/exercices-c`. Le bouton GitHub cible ce dépô
 Le script de vérification exécute les 147 cas contre les 24 corrections à l'aide des mêmes binaires Clang/LLD/WASI et du même Worker que l'interface. Il contrôle également la détection d'une réponse fausse, d'une erreur de syntaxe, d'une erreur d'exécution et la réinitialisation des variables globales entre deux tests.
 
 L'interface expose facultativement quatre outils WebMCP si `document.modelContext` est disponible : lister, ouvrir, modifier le code et vérifier. Cette capacité n'est pas présente dans le navigateur de validation ; sa validation dynamique y est indisponible. Le fonctionnement normal du site n'en dépend pas.
+
+## GitHub Pages
+
+`pnpm build:pages` produit un site entièrement statique dans `dist/pages`, avec une page `index.html` et le préfixe `/exercices-c/` pour les ressources. `pnpm preview:pages` permet de le vérifier localement à `/exercices-c/`. Le workflow GitHub Pages publie ce dossier ; `dist/client` appartient au build serveur Vinext et ne contient pas de page HTML d’entrée.

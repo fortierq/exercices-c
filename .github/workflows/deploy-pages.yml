@@ -40,12 +40,18 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: pnpm build:pages
+
+      - name: Check static entry point and compiler assets
+        run: |
+          test -s dist/pages/index.html
+          test -s dist/pages/compiler/worker.js
+          test -s dist/pages/compiler/clang.bin
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: dist/pages
 
   deploy:
     needs: build
