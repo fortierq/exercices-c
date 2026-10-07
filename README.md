@@ -1,3 +1,5 @@
+> Ce projet est désormais maintenu dans [mpi-informatique/c](https://github.com/mpi-informatique/c). Site : [https://mpi-informatique.github.io/c/](https://mpi-informatique.github.io/c/).
+
 # Exercices C · MPI
 
 24 exercices en français, des fonctions élémentaires aux graphes et à unir-trouver. Interface inspirée du site [ocaml-exercices](https://github.com/fortierq/ocaml-exercices) de Quentin Fortier : navigation par chapitre, lien MPI, bouton GitHub et mode clair/sombre.
